@@ -22,14 +22,14 @@ public class ModulithTest {
     @Test
     void renderDocumentation() throws Exception {
 
-        ApplicationModule common = modules.getModuleByName("common").get();
-        common.getNamedInterfaces().forEach(x -> {
-            System.out.println(x.toString());
-        });
-
         new Documenter(modules)
                 .writeModulesAsPlantUml()
                 .writeIndividualModulesAsPlantUml()
                 .writeModuleCanvases();
+    }
+
+    @Test
+    void printModuleInfor() {
+        modules.forEach(System.out::println);
     }
 }
