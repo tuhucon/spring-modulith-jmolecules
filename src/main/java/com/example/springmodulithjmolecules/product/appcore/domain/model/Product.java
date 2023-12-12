@@ -38,7 +38,6 @@ public class Product extends AbstractAggregateRoot<Product> {
     @Setter(AccessLevel.NONE)
     Money price;
 
-    @DomainEventPublisher
     public void updatePrice(Money newPrice) {
         price = newPrice;
         registerEvent(new ProductPriceUpdatedEvent(this));

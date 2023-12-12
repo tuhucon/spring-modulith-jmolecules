@@ -14,8 +14,8 @@ public class JmoleculesArchTest {
     @ArchTest
     ArchRule layerRule = JMoleculesArchitectureRules.ensureLayering();
 //
-//    @ArchTest
-//    ArchRule onionRule = JMoleculesArchitectureRules.ensureOnionClassical();
+    @ArchTest
+    ArchRule onionRule = JMoleculesArchitectureRules.ensureOnionClassical();
 //
 //    @ArchTest
 //    ArchRule hexagonRule = JMoleculesArchitectureRules.ensureHexagonal();

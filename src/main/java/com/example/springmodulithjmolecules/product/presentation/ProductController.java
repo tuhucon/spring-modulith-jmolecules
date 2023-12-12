@@ -3,7 +3,7 @@ package com.example.springmodulithjmolecules.product.presentation;
 import com.example.springmodulithjmolecules.common.model.Money;
 import com.example.springmodulithjmolecules.product.appcore.domain.model.Product;
 import com.example.springmodulithjmolecules.product.appcore.domain.model.ProductRepository;
-import com.example.springmodulithjmolecules.product.appcore.domain.service.ProductService;
+import com.example.springmodulithjmolecules.product.appcore.service.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;

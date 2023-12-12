@@ -1,4 +1,4 @@
-package com.example.springmodulithjmolecules.product.appcore.domain.service;
+package com.example.springmodulithjmolecules.product.appcore.service;
 
 import com.example.springmodulithjmolecules.common.model.Money;
 import com.example.springmodulithjmolecules.product.appcore.domain.model.Product;
