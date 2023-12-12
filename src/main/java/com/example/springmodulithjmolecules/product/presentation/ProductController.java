@@ -3,6 +3,7 @@ package com.example.springmodulithjmolecules.product.presentation;
 import com.example.springmodulithjmolecules.common.model.Money;
 import com.example.springmodulithjmolecules.product.appcore.domain.model.Product;
 import com.example.springmodulithjmolecules.product.appcore.domain.model.ProductRepository;
+import com.example.springmodulithjmolecules.product.appcore.domain.service.ProductService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,9 +19,17 @@ import java.util.List;
 public class ProductController {
 
     private final ProductRepository productRepository;
+    private final ProductService productService;
 
     @Data
     public static class UpdatePriceBody {
+        Double price;
+    }
+
+    @Data
+    public static class CreateProductBody {
+        String name;
+        String description;
         Double price;
     }
 
@@ -36,5 +45,10 @@ public class ProductController {
 
         p = productRepository.save(p);
         return p;
+    }
+
+    @PostMapping("/products")
+    public Product createProduct(@RequestBody CreateProductBody productBody) {
+        return productService.createProduct(productBody);
     }
 }

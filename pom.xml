@@ -59,6 +59,10 @@
             <artifactId>jmolecules-starter-ddd</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.jmolecules</groupId>
+            <artifactId>jmolecules-layered-architecture</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.jmolecules.integrations</groupId>
             <artifactId>jmolecules-starter-test</artifactId>
             <scope>test</scope>
