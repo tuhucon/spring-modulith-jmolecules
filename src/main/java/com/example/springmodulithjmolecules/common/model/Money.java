@@ -1,5 +1,8 @@
 package com.example.springmodulithjmolecules.common.model;
 
+import org.jmolecules.ddd.annotation.ValueObject;
+
+@ValueObject
 public record Money (double value) {
 
     public Money add(Money y) {
