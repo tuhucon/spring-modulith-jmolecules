@@ -49,6 +49,10 @@ public class ProductController {
 
     @PostMapping("/products")
     public Product createProduct(@RequestBody CreateProductBody productBody) {
-        return productService.createProduct(productBody);
+        Product p = new Product();
+        p.setName(productBody.getName());
+        p.setDescription(productBody.getDescription());
+        p.updatePrice(new Money(productBody.getPrice()));
+        return productService.createProduct(p);
     }
 }

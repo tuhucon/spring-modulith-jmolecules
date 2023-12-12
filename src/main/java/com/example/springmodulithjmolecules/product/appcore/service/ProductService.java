@@ -13,13 +13,7 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public Product createProduct(ProductController.CreateProductBody productBody) {
-        Product p = new Product();
-        p.setName(productBody.getName());
-        p.setDescription(productBody.getDescription());
-        p.updatePrice(new Money(productBody.getPrice()));
-
-        productRepository.save(p);
-        return p;
+    public Product createProduct(Product product) {
+        return productRepository.save(product);
     }
 }
