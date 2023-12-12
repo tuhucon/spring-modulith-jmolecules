@@ -13,6 +13,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.jmolecules.ddd.annotation.AggregateRoot;
+import org.jmolecules.ddd.annotation.Identity;
 import org.jmolecules.event.annotation.DomainEventPublisher;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.modulith.NamedInterface;
@@ -22,11 +23,11 @@ import org.springframework.modulith.NamedInterface;
 @Data
 @EqualsAndHashCode(of = "id")
 @AggregateRoot
-@NamedInterface
 public class Product extends AbstractAggregateRoot<Product> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Identity
     Long id;
 
     String name;

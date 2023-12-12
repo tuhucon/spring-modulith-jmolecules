@@ -11,6 +11,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.jmolecules.ddd.annotation.AggregateRoot;
+import org.jmolecules.ddd.annotation.Identity;
 import org.springframework.data.domain.AbstractAggregateRoot;
 
 @Entity
@@ -18,13 +19,11 @@ import org.springframework.data.domain.AbstractAggregateRoot;
 @Data
 @EqualsAndHashCode(of = "id")
 @AggregateRoot
-public class Order extends AbstractAggregateRoot<Order>{
+public class Order extends AbstractAggregateRoot<Order> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Identity
     Long id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "product_id")
-    Product product;
 }
