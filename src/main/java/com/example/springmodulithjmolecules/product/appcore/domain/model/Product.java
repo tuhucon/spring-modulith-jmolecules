@@ -8,19 +8,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.jmolecules.ddd.annotation.AggregateRoot;
 import org.jmolecules.ddd.annotation.Identity;
-import org.jmolecules.event.annotation.DomainEventPublisher;
 import org.springframework.data.domain.AbstractAggregateRoot;
-import org.springframework.modulith.NamedInterface;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
 @EqualsAndHashCode(of = "id")
 @AggregateRoot
 public class Product extends AbstractAggregateRoot<Product> {
@@ -30,12 +28,13 @@ public class Product extends AbstractAggregateRoot<Product> {
     @Identity
     Long id;
 
+    @Setter
     String name;
 
+    @Setter
     String description;
 
     @Convert(converter = MoneyConveter.class)
-    @Setter(AccessLevel.NONE)
     Money price;
 
     public void updatePrice(Money newPrice) {
