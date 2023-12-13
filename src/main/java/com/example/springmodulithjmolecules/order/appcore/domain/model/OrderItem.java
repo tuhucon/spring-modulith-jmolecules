@@ -4,11 +4,9 @@ import com.example.springmodulithjmolecules.common.model.Money;
 import com.example.springmodulithjmolecules.common.model.MoneyConveter;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import org.jmolecules.ddd.annotation.Identity;
@@ -36,9 +34,6 @@ public class OrderItem {
     @Identity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    Order order;
 
     Long productId;
 
