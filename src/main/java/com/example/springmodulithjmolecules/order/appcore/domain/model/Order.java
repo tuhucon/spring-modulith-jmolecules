@@ -53,8 +53,8 @@ public class Order extends AbstractAggregateRoot<Order> {
     @Convert(converter = MoneyConveter.class)
     Money totalPrice;
 
-    public OrderItem addOrderItem(Long productId, Integer quality, Money price, Money discount) {
-        OrderItem orderItem = new OrderItem(productId, quality, price, discount);
+    public OrderItem addOrderItem(Long productId, Integer quantity, Money price, Money discount) {
+        OrderItem orderItem = new OrderItem(productId, quantity, price, discount);
         orderItems.add(orderItem);
         calculateTotalPrice();
         return orderItem;

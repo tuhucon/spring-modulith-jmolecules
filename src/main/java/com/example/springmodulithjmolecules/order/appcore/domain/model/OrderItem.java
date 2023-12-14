@@ -21,12 +21,12 @@ public class OrderItem {
 
     }
 
-    OrderItem(Long productId, Integer quality, Money price, Money discount) {
+    OrderItem(Long productId, Integer quantity, Money price, Money discount) {
         this.productId = productId;
-        this.quality = quality;
+        this.quantity = quantity;
         this.price = price;
         this.discount = discount;
-        this.originalAmount = new Money(quality * price.value());
+        this.originalAmount = new Money(quantity * price.value());
         this.totalAmount = originalAmount.subtract(discount);
     }
 
@@ -37,7 +37,7 @@ public class OrderItem {
 
     Long productId;
 
-    Integer quality;
+    Integer quantity;
 
     @Convert(converter = MoneyConveter.class)
     Money price;
